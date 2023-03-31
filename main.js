@@ -10,7 +10,7 @@ function randomColor(array) {
 }
 
 function randomPos(){
-    return Math.floor(Math.random()* 280)
+    return Math.floor(Math.random()* 275)
 }
 
 
