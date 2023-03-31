@@ -3,6 +3,7 @@ const beginAgain = document.getElementById("back")
 const palette = ["#9ad2cbff", "#d7ebbaff", "#faa613ff", "#f44708ff", "#a10702ff"];  
 let count = 0;  //for the animation
 let sec = 1000; //interval starts at 1s
+let animation = setInterval(makeStar, sec) 
 
 function randomColor(array) {
     let color = Math.floor(Math.random() * array.length);
@@ -12,9 +13,6 @@ function randomColor(array) {
 function randomPos(){
     return Math.floor(Math.random()* 275)
 }
-
-
-let animation = setInterval(makeStar, sec) 
 
 function makeStar() {
     let star = document.createElement("div")
