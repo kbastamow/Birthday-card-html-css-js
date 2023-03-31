@@ -1,0 +1,115 @@
+ /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+ .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 500px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  
+}
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;   
+    height: 100%; 
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    backface-visibility: visible;
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-image: url("https://images.pexels.com/photos/4742156/pexels-photo-4742156.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
+    background-size: auto;
+    color: black;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; 
+     /**/
+  }
+
+  .flip-card-front img {
+    width: 300px;
+    height: 800px; 
+    object-fit: cover;
+  }
+
+  #starGround {
+    margin:0;
+    border: 3px solid red;
+    width: auto;
+    height: 500px;
+    /* position: relative; */
+    overflow: hidden;
+  }
+
+#starGround h1 {
+    color: rgb(235, 148, 200);
+    font-family: Georgia, 'Times New Roman', Times, serif, serif;
+    border: 3px solid rgb(71, 114, 188);
+    margin: 40% 10%;
+    padding: 15px;
+}
+
+  #starGround i {
+    position: absolute;
+    top: 0;
+    animation: moveStar 3s ease-in-out forwards;
+  }
+
+
+  #starGround i {
+    /* position: absolute; */
+    top: 0;
+    animation: moveStar 3s ease-in-out forwards;
+  }
+  
+
+    /* Style the back side */
+.flip-card-back {
+        top: 0px;
+        background-color: dodgerblue;
+        color: black;
+        transform: rotateY(180deg);
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%; 
+    } 
+    
+
+
+
+  @keyframes moveStar {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(500px);
+      opacity: 0;
+    }
+  }
+
